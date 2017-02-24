@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=developernews
+Name=DeveloperNews
+Icon=${SNAP}/meta/gui/icon.png
+X-Ubuntu-Touch=true
+X-Ubuntu-Single-Instance=true
+X-Ubuntu-Default-Department-ID=internet

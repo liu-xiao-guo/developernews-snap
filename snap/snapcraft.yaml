@@ -1,0 +1,35 @@
+name: developernews
+version: '0.1' 
+summary: This is a snap for ubuntu developer news
+description: |
+  This is This is a snap for ubuntu developer news
+
+grade: stable 
+confinement: strict
+
+apps:
+  developernews:
+    command: desktop-launch "qmlscene $SNAP/developernews/Main.qml"
+    plugs: [network,network-bind,network-manager,home,unity7,opengl]
+
+plugs:
+  platform: # plug name, to be used later
+    interface: content
+    content: ubuntu-app-platform1 # content being mounted and the version, currently 1
+    target: ubuntu-app-platform # the mount directory created
+    default-provider: ubuntu-app-platform # default content source snap, currently the only provider too
+
+parts:
+  qt-app:    
+    source: https://github.com/liu-xiao-guo/developer_news.git
+    plugin: qmake
+    qt-version: qt5 
+    snap:  
+      - -usr/share/doc  
+      - -usr/include  
+    after: [desktop-ubuntu-app-platform] 
+
+  plat:
+    plugin: dump
+    source: .
+    snap: [ubuntu-app-platform]
