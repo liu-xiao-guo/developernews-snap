@@ -24,7 +24,7 @@ parts:
     source: https://github.com/liu-xiao-guo/developer_news.git
     plugin: qmake
     qt-version: qt5 
-    snap:  
+    prime:  
       - -usr/share/doc  
       - -usr/include  
     after: [desktop-ubuntu-app-platform] 
