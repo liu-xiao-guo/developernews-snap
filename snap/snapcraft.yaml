@@ -10,7 +10,7 @@ confinement: strict
 apps:
   developernews:
     command: desktop-launch "qmlscene $SNAP/developernews/Main.qml"
-    plugs: [network,network-bind,network-manager,home,unity7,opengl]
+    plugs: [network,home,unity7,opengl]
 
 plugs:
   platform: # plug name, to be used later
